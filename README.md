@@ -1,2 +1,2 @@
 # Front-End-Development
-Contains HTML , CSS &amp; JavaScript
+HTML , CSS &amp; JavaScript
