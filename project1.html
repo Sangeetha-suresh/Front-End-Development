@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
+    <style>
+    *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: gray;
+        }
+        h1{
+            background-color: black;
+            color: bisque;
+            padding: 30px;
+            margin: 10px;
+            text-align: center;
+            font-family: 'Ephesis', cursive;
+            text-transform:capitalize;
+        }
+        input{
+            padding: 20px;
+            border-width: 5px;
+            border-radius: 5px;
+            border-style:solid;
+            border-color: cadetblue;
+            align-items: center;
+            justify-content: center;
+            caret-color: cadetblue;
+            width: 60%;
+        }
+        input:hover{
+            border-color:tomato;
+            cursor: pointer;  
+        }
+        button{
+            padding: 10px;
+            background-color: orchid;
+            border-style: none;
+            border-radius: 50px;
+            width: 100px;
+            color: white;
+        }
+        
+#result{
+    font-size:40px;
+    font-family: 'Ephesis', cursive;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#score{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: 'Ephesis', cursive;
+    cursor: pointer;
+}
+
+    
+    </style>
+</head>
+<body>
+    <h1> Guess The Number </h1>
+    <center><input id="guessnumber" placeholder="Enter the number....."></center><br>
+    <center><button onclick="check()">check</button></center>
+    <p id="result">You are right/wrong</p><br>
+    <p id="score">score:10</p>
+    <script>
+        var guessnumber=document.getElementById("guessnumber")
+        var result=document.getElementById("result")
+        var score=document.getElementById("score")
+        var randomNumber=Math.floor(Math.random()*10)+1
+        var totalscore=10
+
+        function check()
+        {
+            var enterednumber=guessnumber.value
+            if(randomNumber==enterednumber)
+            {
+              console.log("Right")
+              result.textContent="You are right"
+              alert("Amazing! Keep going.....")
+            }
+            else{
+                totalscore =totalscore-1
+                score.textContent="score:"+totalscore
+                result.textContent="You are Wrong"
+                alert("Try again.....")
+            }
+        }
+    </script>
+    
+</body>
+</html>
